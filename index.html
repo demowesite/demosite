@@ -1,0 +1,148 @@
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A clean, responsive sample website starter with vanilla HTML, CSS & JS." />
+    <title>Sample Website</title>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌐</text></svg>">
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Header / Navigation -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Home">
+          <span class="brand__logo" aria-hidden="true">🌐</span>
+          <span class="brand__text">Sample<span class="brand__accent">Site</span></span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+
+        <nav id="siteNav" class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#home">Home</a></li>
+            <li><a class="nav__link" href="#features">Features</a></li>
+            <li><a class="nav__link" href="#gallery">Gallery</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+          <button id="themeToggle" class="btn btn--ghost" aria-label="Toggle dark mode" title="Toggle theme">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="home" class="section hero">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1>Build fast. Ship confidently.</h1>
+            <p class="lead">A minimal, accessible starter template with responsive layout, dark mode, and a dash of interactivity.</p>
+            <div class="cta">
+              <a href="#features" class="btn btn--primary">Get Started</a>
+              <a href="https://example.com" target="_blank" rel="noopener" class="btn btn--secondary">View Docs</a>
+            </div>
+          </div>
+          <figure class="hero__media">
+            <img src="https://images.unsplash.com/photo-1528460033278-a6ba57020470?q=80&w=1200&auto=format&fit=crop" alt="Abstract colorful shapes" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="section">
+        <div class="container">
+          <header class="section__header">
+            <h2>Features you'll love</h2>
+            <p class="muted">Clean structure, modern styling, and zero dependencies.</p>
+          </header>
+
+          <div class="grid features">
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">⚡</div>
+              <h3>Fast & Lightweight</h3>
+              <p>No frameworks needed. Just semantic HTML, modern CSS, and vanilla JS.</p>
+            </article>
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">📱</div>
+              <h3>Responsive</h3>
+              <p>Mobile‑first layout with flexible grids that scale from phones to desktops.</p>
+            </article>
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">♿</div>
+              <h3>Accessible</h3>
+              <p>Keyboard friendly navigation, proper landmarks, and focus styles by default.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="section section--alt">
+        <div class="container">
+          <header class="section__header">
+            <h2>Gallery</h2>
+            <p class="muted">A simple responsive gallery using CSS grid.</p>
+          </header>
+          <div class="grid gallery">
+            <figure class="gallery__item"><img src="https://picsum.photos/600/400?random=1" alt="Random scenic 1" loading="lazy"><figcaption>Scenic 1</figcaption></figure>
+            <figure class="gallery__item"><img src="https://picsum.photos/600/400?random=2" alt="Random scenic 2" loading="lazy"><figcaption>Scenic 2</figcaption></figure>
+            <figure class="gallery__item"><img src="https://picsum.photos/600/400?random=3" alt="Random scenic 3" loading="lazy"><figcaption>Scenic 3</figcaption></figure>
+            <figure class="gallery__item"><img src="https://picsum.photos/600/400?random=4" alt="Random scenic 4" loading="lazy"><figcaption>Scenic 4</figcaption></figure>
+            <figure class="gallery__item"><img src="https://picsum.photos/600/400?random=5" alt="Random scenic 5" loading="lazy"><figcaption>Scenic 5</figcaption></figure>
+            <figure class="gallery__item"><img src="https://picsum.photos/600/400?random=6" alt="Random scenic 6" loading="lazy"><figcaption>Scenic 6</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="container">
+          <header class="section__header">
+            <h2>Contact</h2>
+            <p class="muted">Send us a message—no backend required for this demo.</p>
+          </header>
+
+          <form id="contactForm" class="form" novalidate>
+            <div class="form__row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Jane Doe" required minlength="2" />
+              <small class="error" id="nameError" role="status" aria-live="polite"></small>
+            </div>
+            <div class="form__row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="jane@example.com" required />
+              <small class="error" id="emailError" role="status" aria-live="polite"></small>
+            </div>
+            <div class="form__row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can we help?" required minlength="10"></textarea>
+              <small class="error" id="messageError" role="status" aria-live="polite"></small>
+            </div>
+
+            <div class="form__actions">
+              <button class="btn btn--primary" type="submit">Send message</button>
+              <span id="formStatus" class="muted" role="status" aria-live="polite"></span>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SampleSite. Built with ❤️ using vanilla web tech.</p>
+        <p class="footer__links">
+          <a href="#top" class="back-to-top">Back to top ↑</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
